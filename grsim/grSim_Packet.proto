@@ -1,5 +1,7 @@
 syntax = "proto2";
 
+package ssl_protos.grsim;
+
 import "grSim_Commands.proto";
 import "grSim_Replacement.proto";
 message grSim_Packet {
