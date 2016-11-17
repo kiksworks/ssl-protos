@@ -1,5 +1,7 @@
 syntax = "proto2";
 
+package ssl_protos.vision;
+
 import "messages_robocup_ssl_detection.proto";
 import "messages_robocup_ssl_geometry.proto";
 

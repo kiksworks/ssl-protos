@@ -1,5 +1,7 @@
 syntax = "proto2";
 
+package ssl_protos.vision;
+
 // A 2D float vector.
 message Vector2f {
   required float x = 1;
