@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+import "command.proto";
+import "replacement.proto";
+
+package ssl_protos.grsim;
+
+message Packet {
+    optional Commands commands = 1;
+    optional Replacement replacement = 2;
+}
