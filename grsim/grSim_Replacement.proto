@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package ssl_protos.grsim;
 
-message grSim_RobotReplacement {
+message Robot {
 required double x=1;
 required double y=2;
 required double dir=3;
@@ -10,14 +10,14 @@ required uint32 id=4;
 required bool yellowteam=5;
 }
 
-message grSim_BallReplacement {
+message Ball {
 required double x=1;
 required double y=2;
 required double vx=3;
 required double vy=4;
 }
 
-message grSim_Replacement {
-optional grSim_BallReplacement ball = 1;
-repeated grSim_RobotReplacement robots = 2;
+message Replacement {
+optional Ball ball = 1;
+repeated Robot robots = 2;
 }
