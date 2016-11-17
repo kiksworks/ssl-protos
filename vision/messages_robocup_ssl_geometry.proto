@@ -12,7 +12,7 @@ message Vector2f {
 // and end point p2, and a line thickness. The start and end points are along
 // the center of the line, so the thickness of the line extends by thickness / 2
 // on either side of the line.
-message SSL_FieldLineSegment {
+message FieldLineSegment {
   // Name of this field marking.
   required string name = 1;
   // Start point of the line segment.
@@ -25,7 +25,7 @@ message SSL_FieldLineSegment {
 
 // Represents a field marking as a circular arc segment represented by center point, a
 // start angle, an end angle, and an arc thickness.
-message SSL_FieldCicularArc {
+message FieldCicularArc {
   // Name of this field marking.
   required string name = 1;
   // Center point of the circular arc.
@@ -40,17 +40,17 @@ message SSL_FieldCicularArc {
   required float thickness = 6;
 }
 
-message SSL_GeometryFieldSize {
+message FieldSize {
   required int32 field_length = 1;
   required int32 field_width = 2;
   required int32 goal_width = 3;
   required int32 goal_depth = 4;
   required int32 boundary_width = 5;
-  repeated SSL_FieldLineSegment field_lines = 6;
-  repeated SSL_FieldCicularArc field_arcs = 7;
+  repeated FieldLineSegment field_lines = 6;
+  repeated FieldCicularArc field_arcs   = 7;
 }
 
-message SSL_GeometryCameraCalibration {
+message CameraCalibration {
   required uint32 camera_id     = 1;
   required float focal_length = 2;
   required float principal_point_x = 3;
@@ -68,7 +68,7 @@ message SSL_GeometryCameraCalibration {
   optional float derived_camera_world_tz = 15;
 }
 
-message SSL_GeometryData {
-  required SSL_GeometryFieldSize field = 1;
-  repeated SSL_GeometryCameraCalibration calib = 2;
+message Geometry {
+  required FieldSize field         = 1;
+  repeated CameraCalibration calib = 2;
 }
