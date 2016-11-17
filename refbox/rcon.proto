@@ -21,10 +21,10 @@ import "referee.proto";
 // command, or a card. Setting more than one action in a single request results
 // in the request being rejected. This simplifies understanding the order in
 // which actions occur.
-message SSL_RefereeRemoteControlRequest {
+message RefereeRemoteControlRequest {
 	// The message ID. This number may be selected arbitrarily by the client.
 	// It is never interpreted by the referee box. It is returned unmodified in
-	// the SSL_RefereeRemoteControlReply message to allow correlating replies
+	// the RefereeRemoteControlReply message to allow correlating replies
 	// to requests.
 	required uint32 message_id = 1;
 
@@ -35,7 +35,7 @@ message SSL_RefereeRemoteControlRequest {
 	// NORMAL_SECOND_HALF, EXTRA_FIRST_HALF, or EXTRA_SECOND_HALF stages.
 	// Instead, prepare a kickoff and then issue the NORMAL_START command via
 	// the command field.
-	optional SSL_Referee.Stage stage = 2;
+	optional Referee.Stage stage = 2;
 
 	// The command to be issued, which should be omitted if no command should
 	// be issued at this time (i.e. the command currently in force may continue
@@ -55,7 +55,7 @@ message SSL_RefereeRemoteControlRequest {
 	// The GOAL_YELLOW and GOAL_BLUE commands must be used to report goals
 	// scored. The goal counters in the TeamInfo messages are incremented when
 	// those commands are issued.
-	optional SSL_Referee.Command command = 3;
+	optional Referee.Command command = 3;
 
 	// The coordinates of the Designated Position (whose purpose depends on the
 	// current command). This is measured in millimetres and correspond to
@@ -64,7 +64,7 @@ message SSL_RefereeRemoteControlRequest {
 	// command field is absent, the designated position does not change. If the
 	// command field is present and the designated position field is absent, no
 	// designated position is included in the new command.
-	optional SSL_Referee.Point designated_position = 4;
+	optional Referee.Point designated_position = 4;
 
 	// The card to issue.
 	message CardInfo {
@@ -124,9 +124,9 @@ message SSL_RefereeRemoteControlRequest {
 
 // The TCP half-connection from referee box to controller carries a sequence of
 // these messages, sent precisely once per received
-// SSL_RefereeRemoteControlRequest message, each preceded by its length in
+// RefereeRemoteControlRequest message, each preceded by its length in
 // bytes as as 4-byte big-endian integer.
-message SSL_RefereeRemoteControlReply {
+message RefereeRemoteControlReply {
 	// The message ID of the request message to which this reply corresponds.
 	required uint32 message_id = 1;
 
