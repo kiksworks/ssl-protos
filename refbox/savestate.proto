@@ -1,5 +1,7 @@
 syntax = "proto2";
 
+package ssl_protos.refbox;
+
 import "referee.proto";
 
 // The type of data saved in the saved state file.
