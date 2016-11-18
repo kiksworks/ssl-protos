@@ -1,6 +1,6 @@
 # ssl-protos
 
-RoboCup SSLでよく使う `*.proro` ファイル ([ssl-vision][], [ssl-refbox][], [grSim][]) の詰め合わせ.
+RoboCup SSLでよく使う `*.proto` ファイル ([ssl-vision][], [ssl-refbox][], [grSim][]) の詰め合わせ.
 
 ## Requirements
 
