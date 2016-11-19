@@ -4,11 +4,11 @@ if(NOT Protobuf_FOUND)
   find_package(Protobuf REQUIRED)
 endif()
 
-if(NOT EXISTS ${PROTOBUF_PROTOC_EXECUTABLE})
+if(NOT EXISTS ${Protobuf_PROTOC_EXECUTABLE})
   message(FATAL_ERROR "Could not find Protobuf Compiler!")
 endif()
 
-include_directories(${PROTOBUF_INCLUDE_DIRS})
+include_directories(${Protobuf_INCLUDE_DIRS})
 
 add_subdirectory(grsim)
 add_subdirectory(refbox)
