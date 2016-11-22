@@ -1,6 +1,7 @@
 # ssl-protos
 
 RoboCup SSLでよく使う `*.proto` ファイル ([ssl-vision][], [ssl-refbox][], [grSim][]) の詰め合わせ.
+#### 当ブランチはproto3へ対応させたファイルとなっています.
 
 ## Requirements
 
