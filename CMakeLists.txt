@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 2.8.8 FATAL_ERROR)
 
 if(NOT Protobuf_FOUND)
-  find_package(Protobuf REQUIRED)
+  find_package(Protobuf 3.0.0 REQUIRED)
+elseif(Protobuf_VERSION VERSION_LESS "3.0.0")
+  message(FATAL_ERROR "Protobuf version must be at least 3.0.0!")
 endif()
 
 if(NOT EXISTS ${Protobuf_PROTOC_EXECUTABLE})
