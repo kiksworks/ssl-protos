@@ -6,7 +6,7 @@ RoboCup SSLでよく使う `*.proto` ファイル ([ssl-vision][], [ssl-refbox][
 ## Requirements
 
 * CMake 2.8.8+
-- Protocol Buffers 3.1+
+- Protocol Buffers 3.0+
 
 ## Usage
 
