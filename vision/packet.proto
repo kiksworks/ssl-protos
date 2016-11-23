@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 
 import "detection.proto";
 import "geometry.proto";
@@ -6,6 +6,6 @@ import "geometry.proto";
 package ssl_protos.vision;
 
 message Packet {
-  optional Frame detection   = 1;
-  optional Geometry geometry = 2;
+  Frame detection   = 1;
+  Geometry geometry = 2;
 }
