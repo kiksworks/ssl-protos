@@ -1,12 +1,11 @@
 # ssl-protos
 
 RoboCup SSLでよく使う `*.proto` ファイル ([ssl-vision][], [ssl-refbox][], [grSim][]) の詰め合わせ.
-構文はproto3へ変更しています.
 
 ## Requirements
 
 * CMake 2.8.8+
-- Protocol Buffers 3.0+
+- Protocol Buffers 2.6+
 
 ## Usage
 

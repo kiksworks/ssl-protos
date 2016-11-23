@@ -1,4 +1,4 @@
-syntax = "proto3";
+syntax = "proto2";
 
 import "command.proto";
 import "replacement.proto";
@@ -6,6 +6,6 @@ import "replacement.proto";
 package ssl_protos.grsim;
 
 message Packet {
-  Commands commands       = 1;
-  Replacement replacement = 2;
+  optional Commands commands       = 1;
+  optional Replacement replacement = 2;
 }
