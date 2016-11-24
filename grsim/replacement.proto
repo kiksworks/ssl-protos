@@ -1,23 +1,23 @@
-syntax = "proto3";
+syntax = "proto2";
 
 package ssl_protos.grsim;
 
 message Robot {
-  double x        = 1;
-  double y        = 2;
-  double dir      = 3;
-  uint32 id       = 4;
-  bool yellowteam = 5;
+  required double x        = 1;
+  required double y        = 2;
+  required double dir      = 3;
+  required uint32 id       = 4;
+  required bool yellowteam = 5;
 }
 
 message Ball {
-  double x  = 1;
-  double y  = 2;
-  double vx = 3;
-  double vy = 4;
+  required double x  = 1;
+  required double y  = 2;
+  required double vx = 3;
+  required double vy = 4;
 }
 
 message Replacement {
-  Ball ball    = 1;
-  Robot robots = 2;
+  optional Ball ball    = 1;
+  repeated Robot robots = 2;
 }

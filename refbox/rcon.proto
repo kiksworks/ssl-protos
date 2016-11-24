@@ -1,4 +1,4 @@
-syntax = "proto3";
+syntax = "proto2";
 
 package ssl_protos.refbox;
 
@@ -26,7 +26,7 @@ message RefereeRemoteControlRequest {
   // It is never interpreted by the referee box. It is returned unmodified in
   // the RefereeRemoteControlReply message to allow correlating replies
   // to requests.
-  uint32 message_id = 1;
+  required uint32 message_id = 1;
 
   // The stage of the game to move to, which should be omitted if the stage
   // need not change.
@@ -35,7 +35,7 @@ message RefereeRemoteControlRequest {
   // NORMAL_SECOND_HALF, EXTRA_FIRST_HALF, or EXTRA_SECOND_HALF stages.
   // Instead, prepare a kickoff and then issue the NORMAL_START command via
   // the command field.
-  Referee.Stage stage = 2;
+  optional Referee.Stage stage = 2;
 
   // The command to be issued, which should be omitted if no command should
   // be issued at this time (i.e. the command currently in force may continue
@@ -55,7 +55,7 @@ message RefereeRemoteControlRequest {
   // The GOAL_YELLOW and GOAL_BLUE commands must be used to report goals
   // scored. The goal counters in the TeamInfo messages are incremented when
   // those commands are issued.
-  Referee.Command command = 3;
+  optional Referee.Command command = 3;
 
   // The coordinates of the Designated Position (whose purpose depends on the
   // current command). This is measured in millimetres and correspond to
@@ -64,7 +64,7 @@ message RefereeRemoteControlRequest {
   // command field is absent, the designated position does not change. If the
   // command field is present and the designated position field is absent, no
   // designated position is included in the new command.
-  Referee.Point designated_position = 4;
+  optional Referee.Point designated_position = 4;
 
   // The card to issue.
   message CardInfo {
@@ -73,16 +73,16 @@ message RefereeRemoteControlRequest {
       CARD_YELLOW = 0;
       CARD_RED    = 1;
     }
-    CardType type = 1;
+    required CardType type = 1;
 
     // Which team to issue the card to.
     enum CardTeam {
       TEAM_YELLOW = 0;
       TEAM_BLUE   = 1;
     }
-    CardTeam team = 2;
+    required CardTeam team = 2;
   }
-  CardInfo card = 5;
+  optional CardInfo card = 5;
 
   // The command_counter of the most recent multicast referee packet observed
   // by the remote control. If this does not match the command_counter value
@@ -119,7 +119,7 @@ message RefereeRemoteControlRequest {
   // bypassed and requests are never rejected for this reason. This is
   // appropriate for remote control software managed by a human operator,
   // where no race condition is possible.
-  uint32 last_command_counter = 6;
+  optional uint32 last_command_counter = 6;
 }
 
 // The TCP half-connection from referee box to controller carries a sequence of
@@ -128,7 +128,7 @@ message RefereeRemoteControlRequest {
 // bytes as as 4-byte big-endian integer.
 message RefereeRemoteControlReply {
   // The message ID of the request message to which this reply corresponds.
-  uint32 message_id = 1;
+  required uint32 message_id = 1;
 
   // The outcome of the request.
   enum Outcome {
@@ -156,5 +156,5 @@ message RefereeRemoteControlReply {
     // time.
     BAD_CARD = 6;
   }
-  Outcome outcome = 2;
+  required Outcome outcome = 2;
 };
