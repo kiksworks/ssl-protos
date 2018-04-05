@@ -4,7 +4,7 @@ RoboCup SSLでよく使う `*.proto` ファイル ([ssl-vision][], [ssl-refbox][
 
 ## Requirements
 
-* CMake 2.8.8+
+- CMake 3.10+
 - Protocol Buffers 2.6+
 
 ## Usage
@@ -20,13 +20,10 @@ $ git submodule add https://github.com/kiksworks/ssl-protos.git ssl-protos
 プロジェクトの `CMakeLists.txt` に以下のように記述し, 必要な実行ファイルに `ssl-protos` をリンクしてください.
 
 ```cmake
-find_package(Protobuf REQUIRED)
-
 add_subdirectory(ssl-protos)
 
 add_executable(main main.cc)
-add_dependencies(main ssl-protos)
-target_link_libraries(main ssl-protos ${Protobuf_LIBRARY})
+target_link_libraries(main ssl-protos)
 ```
 
 ## Note
