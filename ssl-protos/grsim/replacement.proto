@@ -8,6 +8,7 @@ message Robot {
   required double dir      = 3;
   required uint32 id       = 4;
   required bool yellowteam = 5;
+  optional bool turnon     = 6;
 }
 
 message Ball {

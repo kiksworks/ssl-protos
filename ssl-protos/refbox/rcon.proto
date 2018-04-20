@@ -2,6 +2,7 @@ syntax = "proto2";
 
 package ssl_protos.refbox;
 
+import "game_event.proto";
 import "referee.proto";
 
 // The TCP half-connection from controller to referee box carries a sequence of
@@ -120,6 +121,13 @@ message RefereeRemoteControlRequest {
   // appropriate for remote control software managed by a human operator,
   // where no race condition is possible.
   optional uint32 last_command_counter = 6;
+
+  // A unique static identifier for each implementation (like each auto-ref implementation, test
+  // clients, etc) Used to identify the source of requests on the receiving side
+  optional string implementation_id = 7;
+
+  // The game event that caused the referee command
+  optional GameEvent game_event = 8;
 }
 
 // The TCP half-connection from referee box to controller carries a sequence of
@@ -155,6 +163,10 @@ message RefereeRemoteControlReply {
     // The request was rejected because a card cannot be issued at this
     // time.
     BAD_CARD = 6;
+    // The request was rejected because it found no majority
+    NO_MAJORITY = 7;
+    // The request was rejected because the communication to the ssl-refbox failed
+    COMMUNICATION_FAILED = 8;
   }
   required Outcome outcome = 2;
 };
