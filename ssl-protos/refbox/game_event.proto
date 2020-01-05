@@ -3,7 +3,7 @@ syntax = "proto2";
 package ssl_protos.refbox;
 
 // a game event that caused a referee command
-message GameEvent {
+message Game_Event {
   enum GameEventType {
     // not set
     UNKNOWN = 0;
@@ -72,8 +72,8 @@ message GameEvent {
     // Law 9.2: Ball placement
     BALL_PLACEMENT_FAILED = 21;
 
-    // Law 10: A goal is only scored if the ball has not exceeded a robot height (150mm) between
-    // the last kick of an attacker and the time the ball crossed the goal line.
+    // Law 10: A goal is only scored if the ball has not exceeded a robot height (150mm) between the
+    // last kick of an attacker and the time the ball crossed the goal line.
     CHIP_ON_GOAL = 22;
   }
 
@@ -83,13 +83,13 @@ message GameEvent {
   // a team
   enum Team {
     TEAM_UNKNOWN = 0;
-    TEAM_YELLOW  = 1;
-    TEAM_BLUE    = 2;
+    TEAM_YELLOW = 1;
+    TEAM_BLUE = 2;
   }
 
   // information about an originator
   message Originator {
-    required Team team    = 1;
+    required Team team = 1;
     optional uint32 bot_id = 2;
   }
 

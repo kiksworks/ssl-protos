@@ -72,14 +72,14 @@ message RefereeRemoteControlRequest {
     // Which type of card to issue.
     enum CardType {
       CARD_YELLOW = 0;
-      CARD_RED    = 1;
+      CARD_RED = 1;
     }
     required CardType type = 1;
 
     // Which team to issue the card to.
     enum CardTeam {
       TEAM_YELLOW = 0;
-      TEAM_BLUE   = 1;
+      TEAM_BLUE = 1;
     }
     required CardTeam team = 2;
   }
@@ -127,7 +127,7 @@ message RefereeRemoteControlRequest {
   optional string implementation_id = 7;
 
   // The game event that caused the referee command
-  optional GameEvent game_event = 8;
+  optional Game_Event game_event = 8;
 }
 
 // The TCP half-connection from referee box to controller carries a sequence of
