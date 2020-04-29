@@ -1,4 +1,4 @@
-# ssl-protos [![CircleCI](https://circleci.com/gh/kiksworks/ssl-protos.svg?style=svg)](https://circleci.com/gh/kiksworks/ssl-protos)
+# ssl-protos ![](https://github.com/kiksworks/ssl-protos/workflows/Build/badge.svg)
 
 RoboCup SSLでよく使う `*.proto` ファイル ([ssl-vision][], [ssl-refbox][], [ssl-game-controller][], [grSim][]) の詰め合わせ.
 
