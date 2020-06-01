@@ -21,11 +21,13 @@ message FieldLineSegment {
   required Vector2f p2 = 3;
   // Thickness of the line segment.
   required float thickness = 4;
+  // The type of this shape
+  optional FieldShapeType type = 5;
 }
 
 // Represents a field marking as a circular arc segment represented by center point, a
 // start angle, an end angle, and an arc thickness.
-message FieldCicularArc {
+message FieldCircularArc {
   // Name of this field marking.
   required string name = 1;
   // Center point of the circular arc.
@@ -38,6 +40,8 @@ message FieldCicularArc {
   required float a2 = 5;
   // Thickness of the arc.
   required float thickness = 6;
+  // The type of this shape
+  optional FieldShapeType type = 7;
 }
 
 message FieldSize {
@@ -47,7 +51,9 @@ message FieldSize {
   required int32 goal_depth             = 4;
   required int32 boundary_width         = 5;
   repeated FieldLineSegment field_lines = 6;
-  repeated FieldCicularArc field_arcs   = 7;
+  repeated FieldCircularArc field_arcs  = 7;
+  optional int32 penalty_area_depth = 8;
+  optional int32 penalty_area_width = 9;
 }
 
 message CameraCalibration {
@@ -71,4 +77,21 @@ message CameraCalibration {
 message Geometry {
   required FieldSize field         = 1;
   repeated CameraCalibration calib = 2;
+}
+
+enum FieldShapeType {
+  Undefined = 0;
+  CenterCircle = 1;
+  TopTouchLine = 2;
+  BottomTouchLine = 3;
+  LeftGoalLine = 4;
+  RightGoalLine = 5;
+  HalfwayLine = 6;
+  CenterLine = 7;
+  LeftPenaltyStretch = 8;
+  RightPenaltyStretch = 9;
+  LeftFieldLeftPenaltyStretch = 10;
+  LeftFieldRightPenaltyStretch = 11;
+  RightFieldLeftPenaltyStretch = 12;
+  RightFieldRightPenaltyStretch = 13;
 }
