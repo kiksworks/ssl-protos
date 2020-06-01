@@ -10,13 +10,13 @@ message SaveState {
   // These must be numbered 0 and 1.
   enum Team {
     TEAM_YELLOW = 0;
-    TEAM_BLUE   = 1;
+    TEAM_BLUE = 1;
   }
 
   // The possible cards.
   enum Card {
     CARD_YELLOW = 0;
-    CARD_RED    = 1;
+    CARD_RED = 1;
   }
 
   // Information about an issued card.
@@ -27,7 +27,7 @@ message SaveState {
 
   // Information about a running timeout.
   message TimeoutInfo {
-    required Team team          = 1;
+    required Team team = 1;
     required uint32 left_before = 2;
   }
 
@@ -36,7 +36,7 @@ message SaveState {
 
   // The number of goals scored by each team during a penalty shootout.
   required uint32 yellow_penalty_goals = 2;
-  required uint32 blue_penalty_goals   = 3;
+  required uint32 blue_penalty_goals = 3;
 
   // The amount of time, in microseconds, taken so far in a stage.
   required uint64 time_taken = 4;
