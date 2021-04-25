@@ -1,6 +1,6 @@
 # ssl-protos ![](https://github.com/kiksworks/ssl-protos/workflows/Build/badge.svg)
 
-RoboCup SSLでよく使う `*.proto` ファイル ([ssl-vision][], [ssl-refbox][], [ssl-game-controller][], [grSim][]) の詰め合わせ.
+RoboCup SSLでよく使う `*.proto` ファイル ([ssl-vision][], [ssl-game-controller][], [grSim][]) の詰め合わせ.
 
 ## Requirements
 
@@ -45,12 +45,9 @@ The project is licensed under [GNU LGPLv3 or later](LICENSE).
 
 - `./grsim/*.proto`
   - [GPLv3 or later](https://github.com/mani-monaj/grSim/blob/master/LICENSE.md)
-- `./refbox/*.proto`
-  - [GPLv3 or later](https://github.com/RoboCup-SSL/ssl-game-controller/blob/master/LICENSE)
 - `./vision/*.proto`
   - [GPLv3](https://github.com/RoboCup-SSL/ssl-vision/blob/master/COPYING)
 
 [ssl-vision]: https://github.com/RoboCup-SSL/ssl-vision
-[ssl-refbox]: https://github.com/RoboCup-SSL/ssl-refbox
 [grSim]:      https://github.com/mani-monaj/grSim
 [ssl-game-controller]: https://github.com/RoboCup-SSL/ssl-game-controller

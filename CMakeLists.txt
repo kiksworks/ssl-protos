@@ -10,12 +10,10 @@ if(NOT EXISTS ${Protobuf_PROTOC_EXECUTABLE})
 endif()
 
 add_subdirectory(ssl-protos/grsim)
-add_subdirectory(ssl-protos/refbox)
 add_subdirectory(ssl-protos/vision)
 
 add_library(ssl-protos
   $<TARGET_OBJECTS:grsim>
-  $<TARGET_OBJECTS:refbox>
   $<TARGET_OBJECTS:vision>
 )
 target_link_libraries(ssl-protos
