@@ -43,6 +43,8 @@ Kenta Sato (<https://github.com/Tosainu>)
 
 The project is licensed under [GNU LGPLv3 or later](LICENSE).
 
+- `./gc_*.proto`
+  - [GPLv3](https://github.com/RoboCup-SSL/ssl-game-controller/blob/master/LICENSE)
 - `./grsim_*.proto`
   - [GPLv3 or later](https://github.com/mani-monaj/grSim/blob/master/LICENSE.md)
 - `./vision_*.proto`
