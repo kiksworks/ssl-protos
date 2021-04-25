@@ -1,7 +1,7 @@
 syntax = "proto2";
 
-import "command.proto";
-import "replacement.proto";
+import "grsim_command.proto";
+import "grsim_replacement.proto";
 
 package ssl_protos.grsim;
 

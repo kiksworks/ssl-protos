@@ -9,12 +9,10 @@ if(NOT EXISTS ${Protobuf_PROTOC_EXECUTABLE})
   message(FATAL_ERROR "Could not find Protobuf Compiler!")
 endif()
 
-add_subdirectory(ssl-protos/grsim)
-add_subdirectory(ssl-protos/vision)
+add_subdirectory(ssl-protos)
 
 add_library(ssl-protos
-  $<TARGET_OBJECTS:grsim>
-  $<TARGET_OBJECTS:vision>
+  $<TARGET_OBJECTS:ssl-protos-obj>
 )
 target_link_libraries(ssl-protos
   PRIVATE   protobuf::libprotobuf

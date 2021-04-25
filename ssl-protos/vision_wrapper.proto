@@ -1,7 +1,7 @@
 syntax = "proto2";
 
-import "detection.proto";
-import "geometry.proto";
+import "vision_detection.proto";
+import "vision_geometry.proto";
 
 package ssl_protos.vision;
 
